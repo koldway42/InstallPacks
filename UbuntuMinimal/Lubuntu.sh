@@ -1,15 +1,15 @@
 echo Instalando Pacotes...
-sudo apt-get install lubuntu-core^ gpm mc htop curl wget screenfetch
+sudo add-apt-repository -y ppa:ricotz/docky
+sudo add-apt-repository ppa:papirus/papirus
+sudo apt-get update
+sudo apt-get install lubuntu-core^ gpm mc htop curl wget screenfetch firefox plank gcc lxappearance papirus-icon-theme
 echo configurando gpm
 systemctl enable gpm
 systemctl start gpm
 sudo apt-get update
 echo instalando NODE JS...
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-sudo apt-get install -y nodejs mysql-server php5-common libapache2-mod-php5 php5-cli apache2
-sudo ufw allow 'Apache'
+sudo apt-get install -y nodejs
 node --version
 npm --version
 npm --global nodemon
-systemctl enable httpd
-systemctl start httpd
